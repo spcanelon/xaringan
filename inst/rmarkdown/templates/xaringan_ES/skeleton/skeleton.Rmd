@@ -613,3 +613,5 @@ class: center, middle
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 
 The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
+
+Esta plantilla fue traducida por [Silvia Canelón](https://silvia.rbind.io/), [Rocío Joo](https://rociojoo.github.io/) y [Alejandra Hernandez Segura](https://alejandrahsegura.netlify.app/).
