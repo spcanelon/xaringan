@@ -172,9 +172,9 @@ Algunas diferencias entre usar remark.js (izquerda) y usando **xaringan** (derec
 
 ---
 
-# Math Expressions
+# Expresiones Matemáticas
 
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &#36;\alpha+\beta$ renders $\alpha+\beta$. You can use the display style with double dollar signs:
+Puedes escribir expresiones matemáticas de LaTeX dentro de un par de signos de dólar, e.g. &#36;\alpha+\beta$ produce $\alpha+\beta$. Puedes usar el modo display con doble signo dólar:
 
 ```
 $$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
@@ -182,20 +182,20 @@ $$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
 
 $$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
 
-Limitations:
+Limitaciones:
 
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
+1. El código fuente de una expresión matemática de LaTeX debe estar en una sola línea, a menos que esté dentro de un par de doble signos de dólar, en cuyo caso el `$$` inicial debe aparecer al inicio de la línea, seguido inmediatamente de un caracter que no sea un espacio, y el `$$` final debe estar al final de la línea, precedido por un caracter que no sea un espacio.
 
-1. There should not be spaces after the opening `$` or before the closing `$`.
+1. No deben haber espacios después del `$` de apertura or antes del `$` de cierre.
 
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
+1. Las matemáticas no funcionan en el título de la diapositiva (ver una alternativa en [#61](https://github.com/yihui/xaringan/issues/61)).
 
 ---
 
-# R Code
+# Código R
 
 ```{r comment='#'}
-# a boring regression
+# una regresión aburrida
 fit = lm(dist ~ 1 + speed, data = cars)
 coef(summary(fit))
 dojutsu = c('地爆天星', '天照', '加具土命', '神威', '須佐能乎', '無限月読')
@@ -250,9 +250,9 @@ DT::datatable(
 
 ---
 
-# Some Tips
+# Algunos Consejos
 
-- Do not forget to try the `yolo` option of `xaringan::moon_reader`.
+- No olvides probar la opción `yolo` de `xaringan::moon_reader`.
 
     ```yaml
     output:
@@ -262,9 +262,9 @@ DT::datatable(
 
 ---
 
-# Some Tips
+# Algunos Consejos
 
-- Slides can be automatically played if you set the `autoplay` option under `nature`, e.g. go to the next slide every 30 seconds in a lightning talk:
+- Las diapositivas se pueden reproducir automáticamente si configuras la opción `autoplay` bajo `nature`, e.g. ir a la siguiente diapositiva cada 30 segundos en una charla relámpago:
 
     ```yaml
     output:
@@ -273,7 +273,7 @@ DT::datatable(
           autoplay: 30000
     ```
 
-- If you want to restart the play after it reaches the last slide, you may set the sub-option `loop` to TRUE, e.g.,
+- Si quieres reiniciar la reproducción después de llegar a la última diapositiva, puedes deinir la sub-opción `loop` como TRUE, e.g.,
 
     ```yaml
     output:
@@ -286,9 +286,9 @@ DT::datatable(
 
 ---
 
-# Some Tips
+# Algunos Consejos
 
-- A countdown timer can be added to every page of the slides using the `countdown` option under `nature`, e.g. if you want to spend one minute on every page when you give the talk, you can set:
+- Un temporizador de cuenta regresiva puede ser añadido a cada página de las diapositivas usando la opción `countdown` bajo `nature`, e.g. si quieres pasar un minuto en cada página cuando das una charla, puedes configurar:
 
     ```yaml
     output:
@@ -297,7 +297,7 @@ DT::datatable(
           countdown: 60000
     ```
 
-    Then you will see a timer counting down from `01:00`, to `00:59`, `00:58`, ... When the time is out, the timer will continue but the time turns red.
+    Entonces verás un temporizador contando hacia atrás desde `01:00`, a `00:59`, `00:58`, ... Cuando el tiempo se acabe, el temporizador continuará pero el tiempo se mostrará en rojo. 
     
 ---
 
@@ -430,13 +430,13 @@ Pregunta: ¿qué significa `highlight.output = c(TRUE, FALSE)? (Sugerencia: pien
 
 ---
 
-# Some Tips
+# Algunos consejos
 
-- To make slides work offline, you need to download a copy of remark.js in advance, because **xaringan** uses the online version by default (see the help page `?xaringan::moon_reader`).
+- Para que tus diapositivas funcionen fuera de línea, necesitas descargar una copia de remark.js con antelación, porque **xaringan** usa la versión en línea por defecto (ver la página de ayuda `?xaringan::moon_reader`).
 
-- You can use `xaringan::summon_remark()` to download the latest or a specified version of remark.js. By default, it is downloaded to `libs/remark-latest.min.js`.
+- Puedes usar `xaringan::summon_remark()` para descargar la última versión o alguna versión específica de remark.js. Por defecto, se descarga en  `libs/remark-latest.min.js`.
 
-- Then change the `chakra` option in YAML to point to this file, e.g.
+- Luego cambia la opción `chakra` en YAML para señalar a ese archivo, e.g.
 
     ```yaml
     output:
@@ -444,13 +444,13 @@ Pregunta: ¿qué significa `highlight.output = c(TRUE, FALSE)? (Sugerencia: pien
         chakra: libs/remark-latest.min.js
     ```
 
-- If you used Google fonts in slides (the default theme uses _Yanone Kaffeesatz_, _Droid Serif_, and _Source Code Pro_), they won't work offline unless you download or install them locally. The Heroku app [google-webfonts-helper](https://google-webfonts-helper.herokuapp.com/fonts) can help you download fonts and generate the necessary CSS.
+- Si usaste tipos de letra de Google en las diapositivas (el tema por defecto usa _Yanone Kaffeesatz_, _Droid Serif_, y _Source Code Pro_), no funcionarán fuera de línea a menos que los descargues o instales localmente. La app Heroku [google-webfonts-helper](https://google-webfonts-helper.herokuapp.com/fonts) puede ayudar a descargar tipos de letra y generar los CSS necesarios.
 
 ---
 
 # Macros
 
-- remark.js [allows users to define custom macros](https://github.com/yihui/xaringan/issues/80) (JS functions) that can be applied to Markdown text using the syntax `![:macroName arg1, arg2, ...]` or `![:macroName arg1, arg2, ...](this)`. For example, before remark.js initializes the slides, you can define a macro named `scale`:
+- remark.js [permite a les usuaries definir macros personalizadas](https://github.com/yihui/xaringan/issues/80) (funciones JS) que se pueden aplicar al texto Markdown usando la sintaxis `![:macroName arg1, arg2, ...]` o `![:macroName arg1, arg2, ...](this)`. Por ejemplo, antes de que remark.js inicialice las diapositivas, puedes definir una macro llamada `scale`:
 
     ```js
     remark.macros.scale = function (percentage) {
@@ -459,13 +459,13 @@ Pregunta: ¿qué significa `highlight.output = c(TRUE, FALSE)? (Sugerencia: pien
     };
     ```
 
-    Then the Markdown text
+    Entonces el texto Markdown
 
     ```markdown
     ![:scale 50%](image.jpg)
     ```
 
-    will be translated to
+    será traducido a
     
     ```html
     <img src="image.jpg" style="width: 50%" />
@@ -473,9 +473,9 @@ Pregunta: ¿qué significa `highlight.output = c(TRUE, FALSE)? (Sugerencia: pien
 
 ---
 
-# Macros (continued)
+# Macros (continuación)
 
-- To insert macros in **xaringan** slides, you can use the option `beforeInit` under the option `nature`, e.g.,
+- Para insertar macros en diapositivas **xaringan**, puedes usar la opción `beforeInit` bajo la opción `nature`, e.g.,
 
     ```yaml
     output:
@@ -484,9 +484,9 @@ Pregunta: ¿qué significa `highlight.output = c(TRUE, FALSE)? (Sugerencia: pien
           beforeInit: "macros.js"
     ```
 
-    You save your remark.js macros in the file `macros.js`.
+    Guardas tu macros remark.js en el archivo `macros.js`.
 
-- The `beforeInit` option can be used to insert arbitrary JS code before `remark.create()`. Inserting macros is just one of its possible applications.
+- La opción `beforeInit` puede ser usada para insertar código JS arbitrario antes de `remark.create()`. Insertar macros is solo una de sus posibles aplicaciones. 
 
 ---
 
@@ -522,9 +522,9 @@ See [yihui/xaringan#83](https://github.com/yihui/xaringan/issues/83) for an exam
 
 ---
 
-# Themes
+# Temas
 
-Don't want to learn CSS? Okay, you can use some user-contributed themes. A theme typically consists of two CSS files `foo.css` and `foo-fonts.css`, where `foo` is the theme name. Below are some existing themes:
+No quieres aprender CSS? Bueno, puedes usar algunos temas contribuidos por usuaries. Un tema normalmente consiste en dos archivos CSS `foo.css` y `foo-fonts.css`, donde `foo` es el nombre del tema. Abajo encontrarás algunos de los temas existentes:
 
 ```{r, R.options=list(width = 70)}
 names(xaringan:::list_css())
