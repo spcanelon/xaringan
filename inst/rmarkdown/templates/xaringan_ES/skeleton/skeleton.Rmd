@@ -3,7 +3,7 @@ title: "Presentation Ninja"
 subtitle: "⚔<br/>with xaringan"
 author: "Yihui Xie"
 institute: "RStudio, PBC"
-translators: "Silvia Canelón, Alejandra Hernandez Segura, Rocío Joo"
+translators: "Silvia Canelón, Alejandra Hernandez Segura y Rocío Joo"
 date: "2016/12/12 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
@@ -16,13 +16,13 @@ output:
 
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
 
-```{r setup, include=FALSE}
+```{r configuracion, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
 
 ???
 
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+Credito de imagen: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
 
 ---
 class: center, middle
@@ -34,7 +34,7 @@ class: center, middle
 ---
 class: inverse, center, middle
 
-# Empezar
+# Comenzar
 
 ---
 
@@ -615,4 +615,4 @@ Diapositivas creadas mediante el paquete de R [**xaringan**](https://github.com/
 
 El Chakra viene de [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/) y [R Markdown](https://rmarkdown.rstudio.com).
 
-Esta plantilla fue traducida por [Silvia Canelón](https://silvia.rbind.io/), [Rocío Joo](https://rociojoo.github.io/) y [Alejandra Hernandez Segura](https://alejandrahsegura.netlify.app/).
+Esta plantilla fue traducida por [Silvia Canelón](https://silvia.rbind.io/), [Alejandra Hernandez Segura](https://alejandrahsegura.netlify.app/) y [Rocío Joo](https://rociojoo.github.io/).
