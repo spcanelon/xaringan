@@ -3,7 +3,7 @@ title: "Presentation Ninja"
 subtitle: "⚔<br/>with xaringan"
 author: "Yihui Xie"
 institute: "RStudio, PBC"
-translators: "Silvia Canelón, Alejandra Hernandez Segura"
+translators: "Silvia Canelón, Alejandra Hernandez Segura, Rocío Joo"
 date: "2016/12/12 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
@@ -34,13 +34,13 @@ class: center, middle
 ---
 class: inverse, center, middle
 
-# Get Started
+# Empezar
 
 ---
 
-# Hello World
+# Hola Mundo
 
-Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+Instala el paquete **xaringan** de [Github](https://github.com/yihui/xaringan):
 
 ```{r eval=FALSE, tidy=FALSE}
 remotes::install_github("yihui/xaringan")
@@ -48,22 +48,22 @@ remotes::install_github("yihui/xaringan")
 
 --
 
-You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
+Se recomienda utilizar el ambiente de desarrollo (o IDE, por su sigla en inglés: Integrated Development Environment) de [RStudio](https://www.rstudio.com/products/rstudio/), pero no es necesario.
 
-- Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;<sup>1</sup>
-
---
-
-- Click the `Knit` button to compile it;
+- Crea un nuevo documento de R Markdown desde el menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;<sup>1</sup>
 
 --
 
-- or use the [RStudio Addin](https://rstudio.github.io/rstudioaddins/)<sup>2</sup> "Infinite Moon Reader" to live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.
+- Haga clic en el botón `Knit` para compilarlo;
+
+--
+
+- o utiliza el [Addin de RStudio](https://rstudio.github.io/rstudioaddins/)<sup>2</sup> "Infinite Moon Reader" para obtener una vista previa de las diapositivas (cada vez que actualizas y guardas en documento Rmd, las diapositivas serán automaticamente recargadas en el panel RStudio Viewer).
 
 .footnote[
-[1] 中文用户请看[这份教程](https://slides.yihui.org/xaringan/zh-CN.html)
+[1] 中文用户请看[这份教程](https://slides.yihui.org/xaringan/zh-CN.html). Usuarios hispanohablantes, por favor vean [este tutorial](https://slides.yihui.org/xaringan/ES.html)
 
-[2] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template or addin in RStudio.
+[2] Vean [#2](https://github.com/yihui/xaringan/issues/2) si no ven la plantilla o el "addin" en RStudio.
 ]
 
 ---
@@ -71,59 +71,59 @@ background-image: url(`r xaringan:::karl`)
 background-position: 50% 50%
 class: center, bottom, inverse
 
-# You only live once!
+# ¡Solo se vive una vez!
 
 ---
 
-# Hello Ninja
+# Hola Ninja
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+Como un ninja de presentación, seguramente no deberías quedar satisfecho/a con el ejemplo de "Hola Mundo." Necesitas entender más sobre dos cosas:
 
-1. The [remark.js](https://remarkjs.com) library;
+1. La librería [remark.js](https://remarkjs.com);
 
-1. The **xaringan** package;
+1. El paquete **xaringan**;
 
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+Basicamente **xaringan** inyectó el chakra de R Markdown (menos Pandoc) a **remark.js**. Las diapositivas son procesadas por remark.js en el navegador web y la fuente de Markdown que necesita remark.js se genera a través de R Markdown (**knitr**).
 
 ---
 
 # remark.js
 
-You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
+Puede ver una introducción de remark.js en su [página de inicio](https://remarkjs.com). Debería leer el [remark.js Wiki](https://github.com/gnab/remark/wiki) al menos una vez para saber como
 
-- create a new slide (Markdown syntax<sup>*</sup> and slide properties);
+- crear una nueva diapositiva (sintaxis de Markdown<sup>*</sup> y propiedades de la diapositiva);
 
-- format a slide (e.g. text alignment);
+- formatear una diapositiva (p.ej. alineamiento de texto);
 
-- configure the slideshow;
+- configurar la presentación;
 
-- and use the presentation (keyboard shortcuts).
+- y usar la presentación (atajos de teclado).
 
-It is important to be familiar with remark.js before you can understand the options in **xaringan**.
+Es importante estar familiarizado/a con remark.js antes de poder entender las opciones en **xaringan**.
 
-.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
+.footnote[[*] ¡Es diferente con Markdown de Pandoc! Es limitado pero debería ser suficiente para fines de presentaciones. Vamos... ¡No necesita una diapositiva para la Tabla de Contenidos! Bueno, el apoyo de Markdown en remark.js [puede mejorarse](https://github.com/gnab/remark/issues/142) en el futuro.]
 
 ---
 background-image: url(`r xaringan:::karl`)
 background-size: cover
 class: center, bottom, inverse
 
-# I was so happy to have discovered remark.js!
+# ¡Estaba tan feliz de haber descubierto remark.js!
 
 ---
 class: inverse, middle, center
 
-# Using xaringan
+# Usando xaringan
 
 ---
 
 # xaringan
 
-Provides an R Markdown output format `xaringan::moon_reader` as a wrapper for remark.js, and you can use it in the YAML metadata, e.g.
+Proporciona un formato de salida `xaringan::moon_reader` como envoltorio para remark.js, y puede usarlo en los metadatos YAML, p.ej.
 
 ```yaml
 ---
-title: "A Cool Presentation"
+title: "Una Presentación Genial"
 output:
   xaringan::moon_reader:
     yolo: true
@@ -132,43 +132,43 @@ output:
 ---
 ```
 
-See the help page `?xaringan::moon_reader` for all possible options that you can use.
+Consulte la página de ayuda `?xaringan::moon_reader` para conocer todas las opciones posibles que puede usar.
 
 ---
 
 # remark.js vs xaringan
 
-Some differences between using remark.js (left) and using **xaringan** (right):
+Algunas diferencias entre usar remark.js (izquerda) y usando **xaringan** (derecha):
 
 .pull-left[
-1. Start with a boilerplate HTML file;
+1. Comience con un archivo HTML estándar;
 
-1. Plain Markdown;
+1. Markdown sencillo;
 
-1. Write JavaScript to autoplay slides;
+1. Escribe JavaScript para reproducir automáticamente las diapositivas;
 
-1. Manually configure MathJax;
+1. Configue manualmente MathJax;
 
-1. Highlight code with `*`;
+1. Resalte el código con `*`;
 
-1. Edit Markdown source and refresh browser to see updated slides;
+1. Edite la fuente de Markdown y actualice el navegador web para ver las diapositivas actualizadas;
 ]
 
 .pull-right[
-1. Start with an R Markdown document;
+1. Comience con un documento R Markdown;
 
-1. R Markdown (can embed R/other code chunks);
+1. R Markdown (puede incrustar R/otros bloques de código)
 
-1. Provide an option `autoplay`;
+1. Proporcione una opción `autoplay`;
 
-1. MathJax just works;<sup>*</sup>
+1. MathJax simplemente funciona;<sup>*</sup>
 
-1. Highlight code with `{{}}`;
+1. Resalte el código con `{{}}`;
 
-1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
+1. El "addin" "Infinite Moon Reader" de RStudio actualiza las diapositivas con cada cambio;
 ]
 
-.footnote[[*] Not really. See next page.]
+.footnote[[*] En realidad, no. Consulte la siguiente página.]
 
 ---
 
@@ -214,9 +214,9 @@ abline(fit, lwd = 2)
 
 ---
 
-# Tables
+# Tablas
 
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
+Si quiere generar una tabla, asegúrese de que esté en formato HTML (en vez de Markdown u otro formato), p.ej.
 
 ```{r}
 knitr::kable(head(iris), format = 'html')
@@ -301,11 +301,11 @@ DT::datatable(
     
 ---
 
-# Some Tips
+# Algunos consejos
 
-- The title slide is created automatically by **xaringan**, but it is just another remark.js slide added before your other slides.
+- La diapositiva titular es creada automaticamente por **xaringan**, pero es simplemente otra diapositiva remark.js que se agrega antes de las otras diapositivas. 
 
-    The title slide is set to `class: center, middle, inverse, title-slide` by default. You can change the classes applied to the title slide with the `titleSlideClass` option of `nature` (`title-slide` is always applied).
+    La diapositiva titular se establece en `class: center, middle, inverse, title-slide` de manera predeterminada. Puede cambiar las clases de la diapositiva titular con la opción `titleSlideClass` de `nature` (`title-slide` siempre se aplica).
 
     ```yaml
     output:
@@ -316,7 +316,7 @@ DT::datatable(
     
 --
 
-- If you'd like to create your own title slide, disable **xaringan**'s title slide with the `seal = FALSE` option of `moon_reader`.
+- Si quiere crear su propia diapositiva titular, desactiva la diapositiva titular de **xaringan** con la opción `seal = FALSE` de `moon_reader`.
 
     ```yaml
     output:
@@ -326,11 +326,11 @@ DT::datatable(
 
 ---
 
-# Some Tips
+# Algunos consejos
 
-- There are several ways to build incremental slides. See [this presentation](https://slides.yihui.org/xaringan/incremental.html) for examples.
+- Existen varias maneras de construir diapositivas incrementales. Consulte [esta presentación](https://slides.yihui.org/xaringan/incremental.html) para ver ejemplos.
 
-- The option `highlightLines: true` of `nature` will highlight code lines that start with `*`, or are wrapped in `{{ }}`, or have trailing comments `#<<`;
+- La opción `highlightLines: true` de `nature` resaltará las líneas de código que comienzan con `*`, o que están envueltas en `{{ }}`, o tienen comentarios **_"trailing"_** `#<<`;
 
     ```yaml
     output:
@@ -339,56 +339,56 @@ DT::datatable(
           highlightLines: true
     ```
 
-    See examples on the next page.
+    Vea ejemplos en la página siguiente.
 
 ---
 
-# Some Tips
+# Algunos consejos
 
 
 .pull-left[
-An example using a leading `*`:
+Un ejemplo usando un `*` inicial:
 
     ```r
     if (TRUE) {
-    ** message("Very important!")
+    ** message("¡Muy importante!")
     }
     ```
-Output:
+Salida:
 ```r
 if (TRUE) {
-* message("Very important!")
+* message("¡Muy importante!")
 }
 ```
 
-This is invalid R code, so it is a plain fenced code block that is not executed.
+Este es un código R inválido, por lo tanto es un bloque sencillo de código delimitado que no se ejecuta.
 ]
 
 .pull-right[
-An example using `{{}}`:
+Un ejemplo usando `{{}}`:
 
 ````
 `r ''````{r tidy=FALSE}
 if (TRUE) {
-*{{ message("Very important!") }}
+*{{ message("¡Muy importante!") }}
 }
 ```
 ````
-Output:
+Salida:
 ```{r tidy=FALSE}
 if (TRUE) {
-{{ message("Very important!") }}
+{{ message("¡Muy importante!") }}
 }
 ```
 
-It is valid R code so you can run it. Note that `{{}}` can wrap an R expression of multiple lines.
+Este es un código R válido asi que lo puede ejecutar. Tenga en cuenta que `{{}}` puede envolver una expresión de R de varias líneas.
 ]
 
 ---
 
-# Some Tips
+# Algunos consejos
 
-An example of using the trailing comment `#<<` to highlight lines:
+Un ejemplo de usar el comentario **_trailing_** `#<<` para resaltar líneas:
 
 ````markdown
 `r ''````{r tidy=FALSE}
@@ -400,7 +400,7 @@ ggplot(mtcars) +
 ```
 ````
 
-Output:
+Salida:
 
 ```{r tidy=FALSE, eval=FALSE}
 library(ggplot2)
@@ -412,9 +412,9 @@ ggplot(mtcars) +
 
 ---
 
-# Some Tips
+# Algunos consejos
 
-When you enable line-highlighting, you can also use the chunk option `highlight.output` to highlight specific lines of the text output from a code chunk. For example, `highlight.output = TRUE` means highlighting all lines, and `highlight.output = c(1, 3)` means highlighting the first and third line.
+Cuando habilite "line-highlighting," tambien puede usar la opción de bloque `highlight.output` para resaltar líneas específicas de la salida de texto de un bloque de código. Por ejemplo, `highlight.output = TRUE` significa resaltar todas las líneas, and `highlight.output = c(1,3)` significa resaltar la primera y la tercera línea.
 
 ````md
 `r ''````{r, highlight.output=c(1, 3)}
@@ -426,7 +426,7 @@ head(iris)
 head(iris)
 ```
 
-Question: what does `highlight.output = c(TRUE, FALSE)` mean? (Hint: think about R's recycling of vectors)
+Pregunta: ¿qué significa `highlight.output = c(TRUE, FALSE)? (Sugerencia: piensa en el reciclaje de los vectores en R)
 
 ---
 
